@@ -1,0 +1,6 @@
+jwt:
+  algorithms:
+    - RS256
+  audience: development.servers.com
+  issuer: development.auth.com
+  expiresIn: 2h

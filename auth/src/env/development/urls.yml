@@ -1,0 +1,5 @@
+urls:
+  mongodb: mongodb://localhost:27017/mydb
+  auth: http://localhost:3001
+  gateway: http://localhost:3000
+  event: http://localhost:3002

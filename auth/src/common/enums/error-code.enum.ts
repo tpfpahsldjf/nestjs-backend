@@ -1,0 +1,11 @@
+// src/common/enums/error-code.enum.ts
+export enum ErrorCode {
+  NOT_FOUND          = 'NOT_FOUND',
+  DUPLICATE_RESOURCE = 'DUPLICATE_RESOURCE',
+  UNAUTHORIZED       = 'UNAUTHORIZED',
+  FORBIDDEN          = 'FORBIDDEN',
+  VALIDATION_FAILED  = 'VALIDATION_FAILED',
+  INVALID_ARGUMENT   = 'INVALID_ARGUMENT',
+  ALREADY_EXISTS     = 'ALREADY_EXISTS',
+  NOT_EXISTS         = 'NOT_EXISTS'
+}

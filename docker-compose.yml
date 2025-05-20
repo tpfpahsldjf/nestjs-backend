@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:8
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 3s
+      retries: 2
+
+  auth:
+    build: ./auth
+    container_name: auth
+    ports:
+      - "3001:3001"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    environment:
+      - NODE_ENV=production
+
+  gateway:
+    build: ./gateway
+    container_name: gateway
+    ports:
+      - "3000:3000"
+    depends_on:
+      - auth
+    environment:
+      - NODE_ENV=production
+
+  event:
+    build: ./event
+    container_name: event
+    ports:
+      - "3002:3002"
+    depends_on:
+      - auth
+    environment:
+      - NODE_ENV=production

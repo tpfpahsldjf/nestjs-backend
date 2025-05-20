@@ -1,0 +1,5 @@
+urls:
+  mongodb: mongodb://mongo:27017/mydb
+  auth: http://auth:3001
+  gateway: http://gateway:3000
+  event: http://event:3002

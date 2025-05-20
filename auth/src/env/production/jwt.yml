@@ -1,0 +1,6 @@
+jwt:
+  algorithms:
+    - RS256
+  audience: production.servers.com
+  issuer: production.auth.com
+  expiresIn: 2h
